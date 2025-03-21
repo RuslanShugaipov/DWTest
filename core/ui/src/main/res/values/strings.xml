@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">Повторить</string>
+    <string name="error">Ошибка</string>
+    <string name="error_occurred">Возникла ошибка</string>
+
+    <string name="name">Название: %s</string>
+    <string name="app_version">Версия приложения: %s</string>
+    <string name="package_name">Имя пакета: %s</string>
+    <string name="checksum">Контрольная сумма: %s</string>
+    <string name="go_to_app">Перейти в приложение</string>
+</resources>

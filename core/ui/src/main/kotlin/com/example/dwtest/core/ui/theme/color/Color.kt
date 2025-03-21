@@ -1,4 +1,4 @@
-package com.example.dwtest.ui.theme
+package com.example.dwtest.core.ui.theme.color
 
 import androidx.compose.ui.graphics.Color
 

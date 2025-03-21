@@ -2,46 +2,37 @@ package com.example.dwtest
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.dwtest.ui.theme.DWTestTheme
+import androidx.navigation.compose.rememberNavController
+import com.example.dwtest.navigation.Navigation
+import com.example.dwtest.core.ui.theme.DWTestTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+private const val TRANSPARENT_COLOR = android.graphics.Color.TRANSPARENT
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(
+                scrim = TRANSPARENT_COLOR,
+                darkScrim = TRANSPARENT_COLOR,
+            ),
+            navigationBarStyle = SystemBarStyle.light(TRANSPARENT_COLOR, TRANSPARENT_COLOR)
+        )
+
         setContent {
+            val navController = rememberNavController()
+
             DWTestTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                Navigation(
+                    navController = navController,
+                )
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DWTestTheme {
-        Greeting("Android")
     }
 }
