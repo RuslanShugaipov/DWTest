@@ -1,4 +1,4 @@
-package com.example.dwtest.ui.theme
+package com.example.dwtest.core.ui.theme.typography
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
