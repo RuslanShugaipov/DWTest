@@ -2,12 +2,22 @@
 agp = "8.10.0-alpha08"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
+hilt = "2.54"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
 composeBom = "2025.03.00"
+coroutines = "1.10.1"
+androidxComposeFoundation = "1.8.0-rc01"
+androidxNavigation = "2.8.9"
+androidxHiltNavigationCompose = "1.2.0"
+appcompat = "1.7.0"
+material = "1.12.0"
+kotlinxSerializationJson = "1.8.0"
+materialVersion = "1.12.0"
+googleMaterial = "1.12.0"
 
 [libraries]
 #Activity
@@ -15,6 +25,7 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 
 #Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "androidxComposeFoundation" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -23,16 +34,33 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 #Core
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 
+#Coroutines
+jetbrains-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+
+#Hilt
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
+
 #Lifecycle
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 
 #Material
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+#Navigation
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
+
 #Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+#Serialization
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+material = { group = "com.google.android.material", name = "material", version.ref = "googleMaterial" }
 
 [plugins]
 #Android Gradle Plugin
@@ -41,3 +69,8 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 #Kotlin Plugin
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+#Hilt
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }

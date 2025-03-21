@@ -20,5 +20,15 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "DWTest"
-include(":app")
- 
+include(
+    ":app",
+
+    //core
+    ":core:common",
+    ":core:data",
+    ":core:ui",
+
+    //feature
+    ":feature:home",
+    ":feature:detail",
+)
